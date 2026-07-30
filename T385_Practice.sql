@@ -89,5 +89,7 @@ insert into voter values ('Sachin',19);   -- 1row(s)affected
 alter table Voter add email varchar(20) default 'dummy@gmail.com';   -- Set default value
 
 SELECT * FROM Voter;
+-- -----------------------------   30-07-2026    ------------------------------------  ----
+create database Employee;
 
 
