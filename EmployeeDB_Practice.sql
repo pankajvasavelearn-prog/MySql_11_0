@@ -150,10 +150,60 @@ select * from Emp;
  select truncate(123.45688954,-2);		-- values replace with 0 before decimal point.
  select dept, truncate(avg(age),0) from emp group by dept; 
  
+ -- -- --------------------------  05/08/2026   ------------------------------------------
+ use employee; 
+ select distinct dept, gender from emp;
+ select * from emp where age not in (23,28);
+ select * from emp where age in (23,28);
+ 
+ select * from emp where salary between 40000 and 60000;
+ select * from emp where age between 25 and 28;
+ select * from emp where age in(25,28);   		-- In operator use for multiple conditions
+ select * from emp where employeeid in (1004,1007,1003,1010);
+  select * from emp where dept in('IT','HR');
+ 
+ select * from emp where fullname like "P%";
+ select * from emp where fullname like "%y";
+ select * from emp where fullname like "%i%"; 
+ select * from emp where fullname like "_i%";
+ select * from emp where fullname like "__u%";
+ 
+ select * from emp where fullname like "%n__";
+ 
+ select * from emp where fullname not like "P%";
+ 
+ select * from emp;
+ select * from projects;
+ 
+ select * from projects where employeeid is not null;
+ select dept,count(*) from emp group by dept;
+ select dept,count(*) from emp group by dept having count(*)>3;
+ 
+ select dept,count(*) from emp 
+ where  salary >40000
+ group by dept having count(*)>3;
+ 
+ select gender, sum(salary) from emp
+ group by gender having sum(salary)>200000;
  
  
+ select * from Address;
+ 
+ select State, count(*) from address
+ group by state;
+ 
+ select city, count(*) from address
+ group by city having count(*);
  
  
+ select * from projects;
+ 
+ select datediff(enddate,startdate) as duration,count(*) from projects
+ group by datediff(enddate,startdate) having count(*) >=2;
+ 
+  select datediff(enddate,startdate) as duration,count(*) from projects
+  where employeeid >1004
+ group by datediff(enddate,startdate) having count(*) >=2;
  
  
  
