@@ -205,6 +205,34 @@ select * from Emp;
   where employeeid >1004
  group by datediff(enddate,startdate) having count(*) >=2;
  
+ --   ----------------------------   07/08/2026   ----------------------------------------
+ use employee;
+ select * from emp; 
+ select * from projects
+ where employeeid is null; 
+ show tables;
+select * ,concat (fullname,"_",employeeid) as Mail_Code from emp;    --  -- Use to combining two columns data with specific condition.
+select concat("Good"," ","Morning") as remarks;
+
+select fullname,lower(fullname) from emp;										-- Showing values in Lower case
+select fullname,upper(fullname) from emp;										-- Showing Values in Upper case
+select fullname,replace(fullname,"Mohanty","Kulkarni") as New_Name from emp;   -- Replace use for the values changed 
+
+
+update emp set fullname="Sambit Kulkarni" where employeeid=1008;
+update emp set fullname="Anurag Kulkarni" where employeeid=1006;
+
+select * from emp;
+
+select length("Good Morning");								-- checking length of values
+select length(fullname) from emp;
+select substring("Mary Smith",2,3);						-- Extract some string from the value.. 2 -- starting position    3 -- string length whichever string
+select fullname, substring(fullname,2,3) as Partial,
+length(substring(fullname,2,3)) as length from emp;
+
+select *,length(fullname),length(rtrim(fullname)) as right_trimmed, length(ltrim(fullname)) as left_trimmed from emp;
+ 
+ 
  
  
  

@@ -93,3 +93,30 @@ SELECT * FROM Voter;
 create database Employee;
 
 
+--   ----------------------------   07/08/2026   ----------------------------------------
+
+create table Voter_list
+(VoterId int,
+Names varchar(30),
+Age int check(Age>=18));
+
+insert into Voter_list values (20067,"Anuja Patil",18);
+insert into Voter_list values (20067,"Anuja Patil",20);
+
+SELECT * FROM Voter_list;
+
+create table Voter_list2
+(VoterId int,
+Names varchar(30),
+Age int check(Age>=18),
+email_id varchar(30) default "Dummy@gmail.com"
+);
+
+SELECT * FROM Voter_list2;
+
+insert into Voter_list2 values (20067,"Anuja Patil",18,"AnujaP@gmail.com");
+insert into Voter_list2 values (20067,"Anuja Patil",20, default);
+
+
+
+
